@@ -52,7 +52,7 @@ class Media (Base):
     id = Column(Integer, primary_key=True)
     type = Column(String(250))
     url = Column(String(250))
-    post_id = relationship('post.id', backref='post', lazy=True) 
+    post_id = Column(Integer, ForeignKey('post.id')) 
 
     def to_dict(self):
         return {}
